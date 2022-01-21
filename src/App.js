@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import HeaderNav from './components/HeaderNav';
+import Home from './components/Home';
+import About from './components/About';
+import Footer from './components/Footer';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import { Stack } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HashRouter>
+        <Stack className="vh-100" direction="vertical" gap={0}>
+          <HeaderNav />
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/about" element={<About />} />
+            </Routes>
+          <Footer />
+        </Stack>
+      </HashRouter>
     </div>
   );
 }
