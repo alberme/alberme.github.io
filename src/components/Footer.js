@@ -1,6 +1,7 @@
 import * as WebBrowser from 'expo-web-browser';
+import * as Linking from 'expo-linking';
 import { LinearGradient } from 'expo-linear-gradient';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Platform } from 'react-native';
 import { Icon } from 'react-native-elements';
 
 import globalStyles from '../globalStyles';
@@ -27,7 +28,13 @@ export default function Footer() {
 }
 
 const handleLinkPress = (link) => {
-  WebBrowser.openBrowserAsync(link);
+  if (Platform.OS === 'ios') {
+    WebBrowser.openBrowserAsync(link);
+  } else if (Platform.OS === 'web') {
+    window.open(link);
+  } else {
+    Linking.openURL(link);
+  }
 }
 
 const styles = StyleSheet.create({

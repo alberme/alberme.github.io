@@ -1,5 +1,6 @@
 import * as WebBrowser from 'expo-web-browser';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import * as Linking from 'expo-linking';
+import { StyleSheet, View, TouchableOpacity, Platform } from 'react-native';
 import { Card, Text } from 'react-native-elements';
 import placeholder from '../../assets/preview/placeholder.png';
 
@@ -23,7 +24,13 @@ export default function ProjectCard ({ containerStyle, title, description, link,
 }
 
 const handleLinkPress = (link) => {
-  WebBrowser.openBrowserAsync(link);
+  if (Platform.OS === 'ios') {
+    WebBrowser.openBrowserAsync(link);
+  } else if (Platform.OS === 'web') {
+    window.open(link);
+  } else {
+    Linking.openURL(link);
+  }
 }
 
 const styles = StyleSheet.create({
