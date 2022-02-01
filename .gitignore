@@ -10,6 +10,8 @@
 
 # production
 /build
+.expo
+.vscode
 
 # misc
 .DS_Store
