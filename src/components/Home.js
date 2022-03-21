@@ -37,13 +37,13 @@ export default function Home () {
           <h2>Featured Projects</h2>
         </Col>
       </Row>
-      <Row className='justify-content-evenly'>
+      <div className='flex flex-wrap justify-evenly mb-4 mt-4'>
           {
             cardList.map(([ title, description, link, img ], i) => (
               <ProjectCard key={i} title={title} description={description} link={link} img={img} />
             ))
           }
-      </Row>
+      </div>
     </Container>
   );
 }

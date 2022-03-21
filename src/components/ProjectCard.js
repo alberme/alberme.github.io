@@ -19,17 +19,17 @@ const StyledCard = styled(Card)`
 
 export default function ProjectCard ({ title, description, link, img }) {
   return (
-    <StyledCard bg="light">
-      <StyledCard.Img
-        variant="top"
+    <div className='max-w-xs rounded-xl mx-4 my-4 overflow-hidden shadow-lg'>
+      <img
+        className="w-full"
+        alt={`${title} preview`}
         src={img || placeholder}
-        style={{ borderTopLeftRadius: "1rem", borderTopRightRadius: "1rem", objectFit: "cover" }}
       />
-      <StyledCard.Body>
-        <StyledCard.Title>{title}</StyledCard.Title>
-        <StyledCard.Text>{description}</StyledCard.Text>
+      <div className="px-6 py-4">
+        <h4 className="font-bold text-xl mb-2">{title}</h4>
+        <p className="text-gray-700 text-base">{description}</p>
         <a target="_blank" rel="noreferrer" href={link}>Visit this project</a>
-      </StyledCard.Body>
-    </StyledCard>
+      </div>
+    </div>
   );
 }
