@@ -1,5 +1,6 @@
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import ProjectCard from '../components/ProjectCard';
+import Timeline from './Timeline';
 import headshotImg from '../assets/headshot.jpeg';
 import styled from 'styled-components';
 
@@ -17,6 +18,18 @@ const cardList = [
   ['Decidr', 'Roll the dice and select a random item from your list!', 'https://alberme.github.io/decidr', decidr],
   ['E-card', 'A reshareable digital holiday card. Customize and share with your loved ones!', 'https://alberme.github.io/ecard/', ecard]
 ]
+
+const timelineEvents = [
+  { title: 'React Native Apprentice', location: 'Bitwise Industries', date: 'Sept 2021 - current',
+   description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero optio cumque, aliquam, ducimus quae quia fugit quo repudiandae expedita nam, iure assumenda pariatur rerum veritatis ab eum soluta praesentium autem.'
+  },
+  { title: 'STEM Tutor', location: 'Bakersfield College', date: 'Oct 2019 - current',
+  description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero optio cumque, aliquam, ducimus quae quia fugit quo repudiandae expedita nam, iure assumenda pariatur rerum veritatis ab eum soluta praesentium autem.'
+  },
+  { title: 'Supplemental Instruction Leader', location: 'Bakersfield College', date: 'Oct 2019 - current',
+  description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero optio cumque, aliquam, ducimus quae quia fugit quo repudiandae expedita nam, iure assumenda pariatur rerum veritatis ab eum soluta praesentium autem.'
+  },
+];
 
 export default function Home () {
   return (
@@ -44,6 +57,11 @@ export default function Home () {
             ))
           }
       </div>
+      <hr />
+      <section className='flex flex-col justify-center items-center'>
+        <h2>Personal Timeline</h2>
+        <Timeline timeline={timelineEvents} />
+      </section>
     </Container>
   );
 }
