@@ -1,8 +1,25 @@
+import tw from 'tailwind-styled-components';
+
 import placeholder from '../assets/placeholder.png';
+
+const Card = tw.div`
+  mx-4
+  my-4
+  max-w-xs
+  rounded-xl
+  overflow-hidden
+  shadow-lg
+  transition
+  duration-300
+  ease-in-out
+  hover:translate-y-1
+  hover:scale-110
+  hover:bg-white
+`
 
 export default function ProjectCard ({ title, description, link, img }) {
   return (
-    <div className='max-w-xs rounded-xl mx-4 my-4 overflow-hidden shadow-lg transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-amber-100 duration-300'>
+    <Card>
       <img
         className="w-full"
         alt={`${title} preview`}
@@ -13,6 +30,6 @@ export default function ProjectCard ({ title, description, link, img }) {
         <p className="text-gray-700 text-base">{description}</p>
         <a target="_blank" rel="noreferrer" href={link}>Visit this project</a>
       </div>
-    </div>
+    </Card>
   );
 }
