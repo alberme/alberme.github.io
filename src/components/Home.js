@@ -3,6 +3,7 @@ import Projects from './Projects';
 import Timeline from './Timeline';
 import { Section, Main } from './Stack';
 import headshotImg from '../assets/headshot.jpeg';
+import wolf from '../assets/wolf.png';
 import styled from 'styled-components';
 
 import ecard from '../assets/ecard.jpg';
@@ -21,13 +22,19 @@ const projectList = [
 ]
 
 const timelineEvents = [
-  { title: 'React Native Apprentice', location: 'Bitwise Industries', date: 'Sept 2021 - current',
+  { title: 'React Native Apprentice', location: 'Alpha Works - Bitwise Industries', date: 'Sept 2021 - current',
    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero optio cumque, aliquam, ducimus quae quia fugit quo repudiandae expedita nam, iure assumenda pariatur rerum veritatis ab eum soluta praesentium autem.'
+  },
+  { title: 'Volunteer', location: 'Bakersfield Marathon', date: 'March 2022',
+  description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero optio cumque, aliquam, ducimus quae quia fugit quo repudiandae expedita nam, iure assumenda pariatur rerum veritatis ab eum soluta praesentium autem.'
   },
   { title: 'STEM Tutor', location: 'Bakersfield College', date: 'Oct 2019 - current',
   description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero optio cumque, aliquam, ducimus quae quia fugit quo repudiandae expedita nam, iure assumenda pariatur rerum veritatis ab eum soluta praesentium autem.'
   },
   { title: 'Supplemental Instruction Leader', location: 'Bakersfield College', date: 'Oct 2019 - current',
+  description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero optio cumque, aliquam, ducimus quae quia fugit quo repudiandae expedita nam, iure assumenda pariatur rerum veritatis ab eum soluta praesentium autem.'
+  },
+  { title: 'Volunteer', location: 'Adventist Health', date: 'August 2011',
   description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero optio cumque, aliquam, ducimus quae quia fugit quo repudiandae expedita nam, iure assumenda pariatur rerum veritatis ab eum soluta praesentium autem.'
   },
 ];
@@ -36,6 +43,8 @@ export default function Home () {
   return (
     <Main>
       <Section>
+        <img src={wolf} alt="wolf" style={{ width: '25%' }}/>
+        <Col className='mt-4 text-center'>
           <h1>Hi 👋 I'm Albert</h1>
           <h4>A passionate web &amp; mobile app developer</h4>
           <h4>based in California</h4>
