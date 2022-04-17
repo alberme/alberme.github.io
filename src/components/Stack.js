@@ -1,6 +1,6 @@
 import tw from 'tailwind-styled-components';
 
-const StackLayout = tw.div`
+const Layout = tw.div`
   flex
   flex-col
   justify-between
@@ -8,7 +8,7 @@ const StackLayout = tw.div`
   bg-orange-100
 `
 
-const StackMain = tw.main`
+const Main = tw.main`
   flex
   flex-col
   justify-center
@@ -18,7 +18,7 @@ const StackMain = tw.main`
   pb-16
 `
 
-const StackSection = tw.section`
+const Section = tw.section`
   ${(p) => (p.row ? "flex-row" : "flex-col")}
   flex
   flex-wrap
@@ -27,4 +27,4 @@ const StackSection = tw.section`
   my-4
 `
 
-export { StackLayout, StackMain, StackSection, };
+export { Layout, Main, Section, };
