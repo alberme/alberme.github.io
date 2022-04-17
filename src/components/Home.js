@@ -1,7 +1,7 @@
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import Projects from './Projects';
 import Timeline from './Timeline';
-import { StackSection, StackRow } from './Stack';
+import { Section, Main } from './Stack';
 import headshotImg from '../assets/headshot.jpeg';
 import styled from 'styled-components';
 
@@ -34,28 +34,24 @@ const timelineEvents = [
 
 export default function Home () {
   return (
-    <Container className="p-4 flex-grow-1" fluid>
-      <StackSection row>
-        <Col className="p-4 text-center" xs={12} sm={6} md={4} lg={2}>
-          <StyledImage src={headshotImg} roundedCircle/>
-        </Col>
-        <Col className='mt-4 p-4' xs={12} sm={6} md={8}>
+    <Main>
+      <Section>
           <h1>Hi 👋 I'm Albert</h1>
           <h4>A passionate web &amp; mobile app developer</h4>
           <h4>based in California</h4>
         </Col>
-      </StackSection>
+      </Section>
       <hr />
-      <StackSection>
+      <Section>
         <h2>Featured Projects</h2>
         <Projects projects={projectList} />
-      </StackSection>
+      </Section>
       
       <hr />
-      <StackSection>
+      <Section>
         <h2 className='mb-4'>Personal Timeline</h2>
         <Timeline timeline={timelineEvents} />
-      </StackSection>
-    </Container>
+      </Section>
+    </Main>
   );
 }
