@@ -43,7 +43,7 @@ export default function Home () {
   return (
     <Main>
       <Section>
-        <img src={wolf} alt="wolf" style={{ width: '25%' }}/>
+        <img src={headshot} alt="Alberts Headshot" style={{ width: '25%' }}/>
         <Col className='mt-4 text-center'>
           <h1>Hi 👋 I'm Albert</h1>
           <h4>A passionate web &amp; mobile app developer</h4>
