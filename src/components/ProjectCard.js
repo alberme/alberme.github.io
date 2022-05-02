@@ -16,6 +16,29 @@ const Card = tw.div`
   hover:scale-110
   hover:bg-white
 `
+const Pill = tw.div`
+  w-4
+  h-2
+  px-4
+  py-2
+  rounded-full
+  bg-red-300
+`
+
+const getPillColor = (type) => {
+  switch(type) {
+    case 'next.js':
+      return '#333333'
+    case 'node':
+      return '#539e43'
+    case 'react':
+      return '#61dafb'
+    case 'video':
+      return 'var(--color-orange)'
+    default:
+      return 'var(--color-red)'
+  }
+}
 
 export default function ProjectCard ({ title, description, link, img }) {
   return (
