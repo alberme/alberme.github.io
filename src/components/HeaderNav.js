@@ -11,7 +11,7 @@ const HeaderNav = () => {
   return (
     <RBNavbar bg="light" expand={false} sticky='top' style={{background: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,135,70,1) 0%, rgba(130,234,255,1) 100%)"}}>
       <Container fluid>
-        <RBNavbar.Brand as={Link} to="/"><h4>alberm</h4></RBNavbar.Brand>
+        <RBNavbar.Brand as={Link} to="/"><h4>Albert M</h4></RBNavbar.Brand>
         <RBNavbar.Toggle aria-controls="offcanvasNavbar" onClick={handleOpen} />
         <RBNavbar.Offcanvas
           id="offcanvasNavbar"
