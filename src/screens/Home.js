@@ -16,6 +16,9 @@ const cardList = [
   ['E-card', 'A reshareable digital holiday card. Customize and share with your loved ones!', 'https://alberme.github.io/ecard/', ecard]
 ]
 
+const description = "I am a web developer with experience across the web stack. My expertise lies primarily in the Javascript ecosystem";
+const description2= "I'm currently in a React Native apprenticeship at Alpha Works Tech - Bitwise Industries, where I collaborate with React and React Native projects";
+
 export default function Home () {
   const insets = useSafeAreaInsets();
 
@@ -32,9 +35,9 @@ export default function Home () {
             />
           </View>
           <View style={styles.profileDescription}>
-            <Text h1>Hi 👋 I'm Albert</Text>
-            <Text h4>A passionate web &amp; mobile app developer</Text>
-            <Text h4>based in California</Text>
+            <Text h1 h1Style={styles.titleText}>Hi 👋 I'm Albert</Text>
+            <Text style={styles.introText}>{description}</Text>
+            <Text style={styles.introText}>{description2}</Text>
           </View>
         </View>
         <View style={styles.projectsContainer}>
@@ -65,10 +68,21 @@ const styles = StyleSheet.create({
   profileAvatar: {
     marginBottom: 10,
   },
+  titleText: {
+    width: '100%',
+    marginBottom: 10,
+  },  
+  introText: {
+    fontSize: 24,
+    width: '100%',
+    marginBottom: 10,
+  },
   profileDescription: {
     padding: 10,
     marginVertical: 10,
-    flexShrink: 1
+    flexShrink: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   projectsContainer: {
     marginVertical: 10,
