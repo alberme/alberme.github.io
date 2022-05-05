@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from "react-router-dom"
 import { Navbar as RBNavbar, Nav as RBNav, Container, Offcanvas } from 'react-bootstrap';
-// import { FaCodepen } from '';
+import ThemeToggle from './ThemeToggle';
 
 const HeaderNav = () => {
   const [show, setShow] = useState(false);
@@ -11,7 +11,9 @@ const HeaderNav = () => {
   return (
     <RBNavbar bg="light" expand={false} sticky='top' style={{background: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,135,70,1) 0%, rgba(130,234,255,1) 100%)"}}>
       <Container fluid>
+
         <RBNavbar.Brand as={Link} to="/"><h4>Albert M</h4></RBNavbar.Brand>
+        <ThemeToggle />
         <RBNavbar.Toggle aria-controls="offcanvasNavbar" onClick={handleOpen} />
         <RBNavbar.Offcanvas
           id="offcanvasNavbar"

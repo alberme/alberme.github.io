@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 const TimelineItem = tw.div`
   flex
-  justify-center
+  justify-between
   items-center
   h-50
   w-3/4
-  drop-shadow-lg
-  bg-orange-200
+  shadow-md
+  dark:bg-slate-700
   p-2
   m-2
 `
@@ -32,14 +32,14 @@ const TimelineDivider = styled.hr`
 export default function Timeline({ timeline }) {
   return timeline.map((entry, i) => (
     <TimelineItem key={i} >
-      <div className="w-2/3 p-3">
+      <div className="min-w-[16rem] p-3">
         <strong className='tracking-wider'>{entry.title}</strong>
         <br />
         <p>📍&nbsp;{entry.location}</p>
         <p>{entry.date}</p>
       </div>
-      <TimelineDivider />
-      <div className='p-3'>
+      {/* <TimelineDivider /> */}
+      <div className='mr-auto p-3'>
         <p>{entry.description}</p>
       </div>
     </TimelineItem>

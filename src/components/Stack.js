@@ -1,21 +1,23 @@
 import tw from 'tailwind-styled-components';
 
-const Layout = tw.div`
-  flex
-  flex-col
-  justify-between
-  m-auto
-  bg-orange-100
-`
+// const Layout = tw.div`
+//   flex
+//   flex-col
+//   justify-between
+//   m-auto
+//   bg-orange-100
+// `
 
 const Main = tw.main`
   flex
   flex-col
   justify-center
   items-center
-  max-w-7xl
+  lg:max-w-[90vw]
   m-auto
   pb-16
+  text-slate-800
+  dark:text-slate-300
 `
 
 const Section = tw.section`
@@ -27,4 +29,4 @@ const Section = tw.section`
   my-4
 `
 
-export { Layout, Main, Section, };
+export { Main, Section, };

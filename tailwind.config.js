@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: 'class',
   mode: 'jit',
   purge: [
     './public/**/*.html',

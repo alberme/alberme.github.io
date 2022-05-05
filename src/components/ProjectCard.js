@@ -20,7 +20,7 @@ const Card = tw.div`
   ease-in-out
   hover:translate-y-1
   hover:scale-110
-  hover:bg-white
+  dark:bg-slate-700
 `
 const Pill = tw.div`
   w-4
@@ -56,8 +56,8 @@ export default function ProjectCard ({ title, description, link, img }) {
       />
       <div className="px-6 py-4">
         <h4 className="font-bold text-xl mb-2">{title}</h4>
-        <p className="text-gray-700 text-base">{description}</p>
-        <a target="_blank" rel="noreferrer" href={link}>Visit this project</a>
+        <p className="text-base">{description}</p>
+        <a className="dark:text-sky-200" target="_blank" rel="noreferrer" href={link}>Visit this project</a>
       </div>
     </Card>
   );

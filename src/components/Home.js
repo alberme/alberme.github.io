@@ -50,7 +50,7 @@ export default function Home () {
           alt="Alberts Headshot"
         />
         <Intro>
-          <h1>Hi 👋 I'm Albert</h1>
+          <h1 className="font-bold">Hi 👋 I'm Albert</h1>
           <p>
             I am a web and native app developer with experience across various modern web technologies.
             My expertise lies primarily in the Javascript ecosystem,

@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-slate-100 dark:bg-slate-800 transition-all">
       <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
