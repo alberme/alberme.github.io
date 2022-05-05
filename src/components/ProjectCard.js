@@ -3,9 +3,15 @@ import tw from 'tailwind-styled-components';
 import placeholder from '../assets/placeholder.png';
 
 const Card = tw.div`
+  flex
+  flex-col
+  justify-between  
   mx-4
   my-4
-  max-w-xs
+  max-w-[18rem]
+  min-h-[24rem]
+  md:max-w-[20rem]
+  md:min-h-[26rem]
   rounded-xl
   overflow-hidden
   shadow-lg
