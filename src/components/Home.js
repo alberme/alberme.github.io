@@ -1,21 +1,12 @@
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import tw from 'tailwind-styled-components';
 import Projects from './Projects';
 import Timeline from './Timeline';
 import { Section, Main } from './Stack';
 import headshot from '../assets/bitmoji.png';
-import styled from 'styled-components';
 
 import ecard from '../assets/ecard.jpg';
 import decidr from '../assets/decidr.png';
 import todolist from '../assets/todolist.png';
-
-const StyledImage = styled(Image)`
-  border: 1px solid gray;
-  height: 200px;
-}
-`
-const description = "I am a web developer with experience across the web stack. My expertise lies primarily in the Javascript ecosystem";
-const description2= "\nI'm currently in a React Native apprenticeship at Alpha Works Tech - Bitwise Industries, where I collaborate with React and React Native projects";
 
 const projectList = [
   ['Todo-List', 'My first dive into React Native featuring a todo-list app', 'https://github.com/alberme/todolist-expo-app', todolist],
@@ -38,16 +29,39 @@ const timelineEvents = [
   },
 ];
 
+const Intro = tw.div`
+  max-w-[80%]
+  mx-auto
+  mt-4
+  text-center
+`
+
+const Avatar = tw.img`
+  max-w-[12rem]
+  sm:max-w-[16rem]
+`
+
 export default function Home () {
   return (
-    <Main>
+    <>
       <Section>
-        <img src={headshot} alt="Alberts Headshot" style={{ width: '25%' }}/>
-        <Col className='mt-4 text-center'>
+        <Avatar 
+          src={headshot}
+          alt="Alberts Headshot"
+        />
+        <Intro>
           <h1>Hi 👋 I'm Albert</h1>
-          <p>{description}</p>
-          <p>{description2}</p>
-        </Col>
+          <p>
+            I am a web and native app developer with experience across various modern web technologies.
+            My expertise lies primarily in the Javascript ecosystem,
+            specifically with React, React Native, and the MERN (MongoDB, Express, React, Node) stack
+          </p>
+          <p>
+            I am currently in an apprenticeship program at Alpha Works Tech - Bitwise Industries,
+            where I collaborate with my team or various teams to design, prototype, build, and deploy
+            functional apps to production.
+          </p>
+        </Intro>
       </Section>
       <hr />
       <Section>
@@ -60,6 +74,6 @@ export default function Home () {
         <h2 className='mb-4'>Personal Timeline</h2>
         <Timeline timeline={timelineEvents} />
       </Section>
-    </Main>
+    </>
   );
 }
