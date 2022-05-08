@@ -6,10 +6,10 @@ import headshot from '../assets/bitmoji.png';
 
 import ecard from '../assets/ecard.jpg';
 import decidr from '../assets/decidr.png';
-import todolist from '../assets/todolist.png';
+import triviaAndChill from '../assets/triviaAndChill.png';
 
 const projectList = [
-  ['Todo-List', 'My first dive into React Native featuring a todo-list app', 'https://github.com/alberme/todolist-expo-app', todolist],
+  ['Trivia & Chill', 'Test your movie knowledge in this trivia game! Featuring a beautiful deco-art theme and challenging questions.', 'https://luceroweb.github.io/trivia-and-chill', triviaAndChill],
   ['Decidr', 'Roll the dice and select a random item from your list!', 'https://alberme.github.io/decidr', decidr],
   ['E-card', 'A reshareable digital holiday card. Customize and share with your loved ones!', 'https://alberme.github.io/ecard/', ecard]
 ]
