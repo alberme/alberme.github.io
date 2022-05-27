@@ -1,9 +1,7 @@
-import './App.css';
 import Home from './components/Home';
 import About from './components/About';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

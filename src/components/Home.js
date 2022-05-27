@@ -1,7 +1,7 @@
 import tw from 'tailwind-styled-components';
 import Projects from './Projects';
 import Timeline from './Timeline';
-import { Section, Main } from './Stack';
+import { Section } from './Stack';
 import headshot from '../assets/bitmoji.png';
 
 import ecard from '../assets/ecard.jpg';
@@ -50,7 +50,7 @@ export default function Home () {
           alt="Alberts Headshot"
         />
         <Intro>
-          <h1 className="font-bold">Hi 👋 I'm Albert</h1>
+          <h1>Hi 👋 I'm Albert</h1>
           <p>
             I am a web and native app developer with experience across various modern web technologies.
             My expertise lies primarily in the Javascript ecosystem,
