@@ -16,12 +16,10 @@ const Main = tw.main`
   lg:max-w-[90vw]
   m-auto
   pb-16
-  text-slate-800
-  dark:text-slate-300
 `
 
 const Section = tw.section`
-  ${(p) => (p.row ? "flex-row" : "flex-col")}
+  ${(p) => (p.$row ? "flex-row" : "flex-col")}
   flex
   flex-wrap
   justify-center

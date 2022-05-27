@@ -4,23 +4,24 @@ import { useContext } from 'react';
 import { ThemeContext } from './ThemeProvider';
 
 const Toggle = tw.button`
-  transition
-  duration-500
+  ${p => p.$shrink ? 'text-lg' : 'text-2xl'}
+  transition-all
   ease-in-out
   rounded-full
   p-2
   text-gray-500
   dark:text-slate-100
-  text-2xl
+
   cursor-pointer
 `
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ shrink }) {
   const { activeTheme, setActiveTheme } = useContext(ThemeContext);
 
   return (
     <Toggle
       onClick={() => setActiveTheme(activeTheme === 'light' ? 'dark' : 'light')}
+      $shrink={shrink}
     >
       { activeTheme === 'light' ? <FaMoon />: <FaSun /> }
     </Toggle>
