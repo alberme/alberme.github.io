@@ -27,4 +27,13 @@ const Section = tw.section`
   my-4
 `
 
-export { Main, Section, };
+const Container = tw.div`
+  flex
+  flex-wrap
+  ${(p) => (p.$row ? "flex-row" : "flex-col")}
+  ${(p) => (p.$center && 'justify-center items-center')}
+  p-2
+  w-full
+`
+
+export { Main, Section, Container };
