@@ -1,6 +1,6 @@
 import tw from 'tailwind-styled-components';
 import Projects from './Projects';
-import Timeline from './Timeline';
+import TimelineCard from './TimelineCard';
 import { Section } from './Stack';
 import headshot from '../assets/bitmoji.png';
 
@@ -72,7 +72,7 @@ export default function Home () {
       <hr />
       <Section>
         <h2 className='mb-4'>Personal Timeline</h2>
-        <Timeline timeline={timelineEvents} />
+        { timelineEvents.map((event, i) => <TimelineCard key={i} event={event} />) }
       </Section>
     </>
   );
