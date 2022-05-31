@@ -4,14 +4,14 @@ import TimelineCard from './TimelineCard';
 import { Section, Container } from './Stack';
 import headshot from '../assets/bitmoji.png';
 
-import ecard from '../assets/ecard.jpg';
-import decidr from '../assets/decidr.png';
-import triviaAndChill from '../assets/triviaAndChill.png';
+import ecardImage from '../assets/ecard.jpg';
+import hauntedHouseImage from '../assets/hauntedhouse.png';
+import triviaAndChillImage from '../assets/triviaAndChill.png';
 
 const projectList = [
-  ['Trivia & Chill', 'Test your movie knowledge in this trivia game! Featuring a beautiful deco-art theme and challenging questions.', 'https://luceroweb.github.io/trivia-and-chill', triviaAndChill],
-  ['Decidr', 'Roll the dice and select a random item from your list!', 'https://alberme.github.io/decidr', decidr],
-  ['E-card', 'A reshareable digital holiday card. Customize and share with your loved ones!', 'https://alberme.github.io/ecard/', ecard]
+  ['Trivia & Chill', 'Test your movie knowledge in this trivia game! Featuring a beautiful deco-art theme and challenging questions.', 'https://luceroweb.github.io/trivia-and-chill', triviaAndChillImage],
+  ['The Haunted House Game', 'Escape the creepy haunted house in this story based game!', 'https://luceroweb.github.io/haunted-house-game', hauntedHouseImage],
+  ['E-card', 'A reshareable digital holiday card. Customize and share with your loved ones!', 'https://alberme.github.io/ecard/', ecardImage]
 ]
 
 const timelineEvents = [
