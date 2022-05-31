@@ -1,18 +1,19 @@
 import tw from 'tailwind-styled-components';
-import { FaEllipsisV } from 'react-icons/fa';
-// import { useState } from 'react';
+import { FaEllipsisV, FaTimes } from 'react-icons/fa';
+import { useState } from 'react';
 import { Link } from "react-router-dom"
 import ThemeToggle from './ThemeToggle';
 
 const Nav = tw.nav`
   flex
   justify-between
-  items-baseline
-  h-18
+  items-center
+  py-2
   sticky
   top-0
   z-50
-  ${p => p.$shrink ? "py-1" : "py-3"}
+  h-20
+  ${p => p.$shrink ? "max-h-14" : "max-h-20"}
   px-10
   backdrop-blur-md
   backdrop-saturate-150
@@ -26,8 +27,45 @@ const MenuButton = tw.button`
   cursor-pointer
 `
 
+const NavMenu = tw.div`
+bg-slate-700
+  flex
+  flex-col
+  gap-4
+  rounded-md
+  z-50
+  w-40
+  max-h-min
+  pt-2
+  pb-4
+  px-1
+  my-auto
+  mr-0
+  ml-auto
+`
+
+const NavButtonsContainer = tw.div`
+  flex
+  justify-around
+  w-28
+  px-3
+`
+
+const NavControls = ({ className, menuOpen, shrink, setShow }) => (
+  <NavButtonsContainer className={className}>
+    <ThemeToggle shrink={shrink} />
+    <MenuButton
+      $shrink={shrink}
+      onClick={() => setShow(prevShow => !prevShow)}
+    >
+      {menuOpen ? <FaTimes /> : <FaEllipsisV />}
+      
+    </MenuButton>
+  </NavButtonsContainer>
+)
+
 const HeaderNav = ({ shrink }) => {
-  // const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
   // const handleOpen = () => setShow(true);
   // const handleClose = () => setShow(false);
 
@@ -36,12 +74,21 @@ const HeaderNav = ({ shrink }) => {
       <Link to="/">
         <h2 className={(shrink ? 'text-xl transition-all' : 'transition-all') + ' m-0'}>Albert M</h2>
       </Link>
-      <div className="flex w-28 justify-around px-3">
-        <ThemeToggle shrink={shrink} />
-        <MenuButton $shrink={shrink}>
-          <FaEllipsisV />
-        </MenuButton>
-      </div>
+      {show ? (
+        <NavMenu>
+          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 2 }}>
+            <NavControls className="self-end" menuOpen={show} shrink={shrink} setShow={setShow} />
+            <div className="flex flex-col leading-8">
+              <Link to="about">About</Link>
+              <h4>World</h4>
+            </div>
+            
+
+          </div>
+        </NavMenu>
+      ) : (
+        <NavControls menuOpen={show} shrink={shrink} setShow={setShow} />
+      )}
     </Nav> 
     // <RBNavbar bg="light" expand={false} sticky='top' style={{background: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,135,70,1) 0%, rgba(130,234,255,1) 100%)"}}>
     //   <Container fluid>
