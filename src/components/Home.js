@@ -1,7 +1,7 @@
 import tw from 'tailwind-styled-components';
-import Projects from './Projects';
+import ProjectCard from './ProjectCard';
 import TimelineCard from './TimelineCard';
-import { Section } from './Stack';
+import { Section, Container } from './Stack';
 import headshot from '../assets/bitmoji.png';
 
 import ecard from '../assets/ecard.jpg';
@@ -45,34 +45,42 @@ export default function Home () {
   return (
     <>
       <Section>
-        <Avatar 
-          src={headshot}
-          alt="Alberts Headshot"
-        />
-        <Intro>
-          <h1>Hi 👋 I'm Albert</h1>
-          <p>
-            I am a web and native app developer with experience across various modern web technologies.
-            My expertise lies primarily in the Javascript ecosystem,
-            specifically with React, React Native, and the MERN (MongoDB, Express, React, Node) stack
-          </p>
-          <p>
-            I am currently in an apprenticeship program at Alpha Works Tech - Bitwise Industries,
-            where I collaborate with my team or various teams to design, prototype, build, and deploy
-            functional apps to production.
-          </p>
-        </Intro>
+        <Container $center>
+          <Avatar 
+            src={headshot}
+            alt="Alberts Headshot"
+          />
+          <Intro>
+            <h1>Hi 👋 I'm Albert</h1>
+            <p>
+              I am a web and native app developer with experience across various modern web technologies.
+              My expertise lies primarily in the Javascript ecosystem,
+              specifically with React, React Native, and the MERN (MongoDB, Express, React, Node) stack
+            </p>
+            <p>
+              I am currently in an apprenticeship program at Alpha Works Tech - Bitwise Industries,
+              where I collaborate with my team or various teams to design, prototype, build, and deploy
+              functional apps to production.
+            </p>
+          </Intro>
+        </Container>
       </Section>
       <hr />
       <Section>
         <h2>Featured Projects</h2>
-        <Projects projects={projectList} />
+        <Container $row $center>
+          {projectList.map(([ title, description, link, img ], i) => (
+            <ProjectCard key={i} title={title} description={description} link={link} img={img} />
+          ))}
+        </Container>
       </Section>
       
       <hr />
       <Section>
-        <h2 className='mb-4'>Personal Timeline</h2>
-        { timelineEvents.map((event, i) => <TimelineCard key={i} event={event} />) }
+        <h2>Personal Timeline</h2>
+        <Container $center>
+          { timelineEvents.map((event, i) => <TimelineCard key={i} event={event} />) }
+        </Container>
       </Section>
     </>
   );
