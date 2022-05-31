@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/react-portfolio/static/css/main.6ac01dd3.css",
-    "main.js": "/react-portfolio/static/js/main.a103f9b8.js",
-    "static/js/787.86e70ff7.chunk.js": "/react-portfolio/static/js/787.86e70ff7.chunk.js",
-    "static/media/ecard.jpg": "/react-portfolio/static/media/ecard.55218894c843065ce470.jpg",
-    "static/media/todolist.png": "/react-portfolio/static/media/todolist.88e769bb370526f844de.png",
-    "static/media/decidr.png": "/react-portfolio/static/media/decidr.627dfcd2be53447b2101.png",
-    "static/media/headshot.jpeg": "/react-portfolio/static/media/headshot.b1be9d14e2b3fcae946a.jpeg",
-    "static/media/placeholder.png": "/react-portfolio/static/media/placeholder.02c45fed6f554e1c67c8.png",
-    "index.html": "/react-portfolio/index.html",
-    "main.6ac01dd3.css.map": "/react-portfolio/static/css/main.6ac01dd3.css.map",
-    "main.a103f9b8.js.map": "/react-portfolio/static/js/main.a103f9b8.js.map",
-    "787.86e70ff7.chunk.js.map": "/react-portfolio/static/js/787.86e70ff7.chunk.js.map"
+    "main.css": "/static/css/main.92de8b71.css",
+    "main.js": "/static/js/main.949e8ccf.js",
+    "static/js/787.86e70ff7.chunk.js": "/static/js/787.86e70ff7.chunk.js",
+    "static/media/triviaAndChill.png": "/static/media/triviaAndChill.215d4964a020f5b19657.png",
+    "static/media/ecard.jpg": "/static/media/ecard.55218894c843065ce470.jpg",
+    "static/media/bitmoji.png": "/static/media/bitmoji.2741878db70d7a335996.png",
+    "static/media/placeholder.png": "/static/media/placeholder.02c45fed6f554e1c67c8.png",
+    "static/media/hauntedhouse.png": "/static/media/hauntedhouse.805eedf1261ddf3e6980.png",
+    "index.html": "/index.html",
+    "main.92de8b71.css.map": "/static/css/main.92de8b71.css.map",
+    "main.949e8ccf.js.map": "/static/js/main.949e8ccf.js.map",
+    "787.86e70ff7.chunk.js.map": "/static/js/787.86e70ff7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6ac01dd3.css",
-    "static/js/main.a103f9b8.js"
+    "static/css/main.92de8b71.css",
+    "static/js/main.949e8ccf.js"
   ]
 }
