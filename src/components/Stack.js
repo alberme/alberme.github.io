@@ -19,12 +19,9 @@ const Main = tw.main`
 `
 
 const Section = tw.section`
-  ${(p) => (p.$row ? "flex-row" : "flex-col")}
-  flex
-  flex-wrap
-  justify-center
-  items-center
+  w-full
   my-4
+  py-2
 `
 
 const Container = tw.div`
