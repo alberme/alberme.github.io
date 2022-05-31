@@ -18,10 +18,13 @@ const timelineEvents = [
   { title: 'React Native Apprentice', location: 'Alpha Works - Bitwise Industries', date: 'Sept 2021 - current',
    description: 'Currently working on a team to learn web and native app development using React Native, agile methodology, and GitHub Projects.'
   },
-  { title: 'STEM Tutor', location: 'Bakersfield College', date: 'Oct 2019 - current',
+  { title: 'Volunteer', location: 'Bakersfield Marathon', date: 'Apr 2022',
+   description: 'Passed out water cups to runners, maintained cleanliness of the course'
+  },
+  { title: 'STEM Tutor', location: 'Bakersfield College', date: 'Sept 2017 - May 2018',
   description: 'Tutored CS students on demand based on a data structures and computer architecture course'
   },
-  { title: 'Supplemental Instruction Leader', location: 'Bakersfield College', date: 'Oct 2019 - current',
+  { title: 'Supplemental Instruction Leader', location: 'Bakersfield College', date: 'Sept 2015 – May 2016',
   description: 'Hosted regularly scheduled discussions about CS fundamentals in Java and data structures and algorithms in C++. Taught and guided students in the right direction towards success'
   },
   { title: 'Volunteer', location: 'Adventist Health', date: 'August 2011',
