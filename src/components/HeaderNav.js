@@ -1,6 +1,6 @@
 import tw from 'tailwind-styled-components';
 import { FaEllipsisV, FaTimes } from 'react-icons/fa';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from "react-router-dom"
 import ThemeToggle from './ThemeToggle';
 
@@ -13,11 +13,14 @@ const Nav = tw.nav`
   top-0
   z-50
   h-20
+  transition-all
+  border-slate-300
+  dark:border-slate-600
   ${p => p.$shrink ? "max-h-14" : "max-h-20"}
+  ${p => p.$shrink ? 'border-b-[1px]' : 'border-b-0'}
   px-10
   backdrop-blur-md
   backdrop-saturate-150
-  transition-all
 `
 
 const MenuButton = tw.button`
@@ -28,27 +31,25 @@ const MenuButton = tw.button`
 `
 
 const NavMenu = tw.div`
-bg-slate-700
+bg-slate-200
+dark:bg-slate-700
   flex
   flex-col
-  gap-4
   rounded-md
   z-50
   w-40
   max-h-min
   pt-2
   pb-4
-  px-1
+  px-4
   my-auto
   mr-0
   ml-auto
+  gap-4
 `
 
 const NavButtonsContainer = tw.div`
-  flex
-  justify-around
-  w-28
-  px-3
+  space-x-4
 `
 
 const NavControls = ({ className, menuOpen, shrink, setShow }) => (
@@ -66,24 +67,33 @@ const NavControls = ({ className, menuOpen, shrink, setShow }) => (
 
 const HeaderNav = ({ shrink }) => {
   const [show, setShow] = useState(false);
+  const navMenuRef = useRef(null);
   // const handleOpen = () => setShow(true);
   // const handleClose = () => setShow(false);
-
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      if (show && navMenuRef.current && !navMenuRef.current.contains(e.target)) {
+        setShow(false);
+      }
+    }
+    document.body.addEventListener('mousedown', checkIfClickedOutside);
+    return () => {
+      document.body.removeEventListener('mousedown', checkIfClickedOutside)
+    }
+  }, [show])
   return (
     <Nav $shrink={shrink}>
       <Link to="/">
         <h2 className={(shrink ? 'text-xl transition-all' : 'transition-all') + ' m-0'}>Albert M</h2>
       </Link>
       {show ? (
-        <NavMenu>
-          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 2 }}>
+        <NavMenu ref={navMenuRef}>
+          <div className="flex flex-col leading-3">
             <NavControls className="self-end" menuOpen={show} shrink={shrink} setShow={setShow} />
             <div className="flex flex-col leading-8">
+              <Link to="/">Home</Link>
               <Link to="about">About</Link>
-              <h4>World</h4>
-            </div>
-            
-
+            </div>            
           </div>
         </NavMenu>
       ) : (
