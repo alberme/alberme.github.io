@@ -11,11 +11,11 @@
     -moz-osx-font-smoothing: grayscale;
   }
   h1 {
-    @apply font-bold leading-tight text-3xl;
+    @apply font-bold leading-tight text-3xl text-center;
     font-family: 'Fira Sans', 'sans-serif';
   }
   h2 {
-    @apply font-bold leading-tight text-2xl;
+    @apply font-bold leading-tight text-2xl text-center mb-4;
     font-family: 'Fira Sans', 'sans-serif';
   }
   h4 {
