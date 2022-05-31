@@ -1,27 +1,30 @@
 import tw from 'tailwind-styled-components';
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
-import { Section } from './Stack';
+import { Container } from './Stack';
 
 
 const StyledFooter = tw.footer`
-  p-2
+  py-4
   w-full
 `
 const SocialIcon = tw.a`
   mx-4
+  text-4xl
+  text-gray-500
+  dark:text-slate-100
 `
 
 export default function Footer() {
   return (
     <StyledFooter>
-      <Section $row>
+      <Container $row $center>
         <SocialIcon href="https://github.com/alberme">
-          <FaGithub className='icon' />
+          <FaGithub />
         </SocialIcon>
         <SocialIcon href="https://linkedin.com/in/albermj">
-          <FaLinkedinIn className='icon' />
+          <FaLinkedinIn />
         </SocialIcon>
-      </Section>
+      </Container>
     </StyledFooter>
   ); 
 }
