@@ -2,7 +2,6 @@ import tw from 'tailwind-styled-components';
 import { FaEllipsisV } from 'react-icons/fa';
 // import { useState } from 'react';
 import { Link } from "react-router-dom"
-// import { Navbar as RBNavbar, Nav as RBNav, Container, Offcanvas } from 'react-bootstrap';
 import ThemeToggle from './ThemeToggle';
 
 const Nav = tw.nav`
@@ -31,11 +30,11 @@ const HeaderNav = ({ shrink }) => {
   // const [show, setShow] = useState(false);
   // const handleOpen = () => setShow(true);
   // const handleClose = () => setShow(false);
-  console.log(shrink);
+
   return (
     <Nav $shrink={shrink}>
       <Link to="/">
-        <h2 className={shrink ? 'text-xl transition-all' : 'transition-all'}>Albert M</h2>
+        <h2 className={(shrink ? 'text-xl transition-all' : 'transition-all') + ' m-0'}>Albert M</h2>
       </Link>
       <div className="flex w-28 justify-around px-3">
         <ThemeToggle shrink={shrink} />
