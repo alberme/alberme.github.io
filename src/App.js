@@ -5,7 +5,7 @@ import Layout from './components/Layout';
 
 function App() {
   return (
-    <div className="App bg-slate-100 dark:bg-slate-800 transition-all">
+    <div className="flex flex-col min-h-screen bg-slate-100 dark:bg-slate-800 transition-colors">
       <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
