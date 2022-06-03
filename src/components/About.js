@@ -2,7 +2,7 @@ import { Container } from './Stack';
 
 export default function About () {
   return (
-      <Container $fullHeight>
+      <Container className="px-4">
       <h2>About</h2>
       <p>
         I am a <strong>passionate</strong>, <strong>self-disciplined</strong>, <strong>dedicated</strong> &amp; <strong>self-taught</strong> developer with the goal of pursuing a
