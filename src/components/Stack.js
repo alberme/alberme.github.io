@@ -31,7 +31,6 @@ const Container = tw.div`
   ${(p) => (p.$center && 'justify-center items-center')}
   p-2
   w-full
-  ${(p) => (p.$fullHeight && "h-[100vh]")}
 `
 
 export { Main, Section, Container };
