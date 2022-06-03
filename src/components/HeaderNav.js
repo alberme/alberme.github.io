@@ -26,8 +26,8 @@ const Nav = tw.nav`
 const MenuButton = tw.button`
   ${p => p.$shrink ? "text-lg" : "text-2xl"}
   bg-transparent
-  text-white
   cursor-pointer
+
 `
 
 const NavMenu = tw.div`
