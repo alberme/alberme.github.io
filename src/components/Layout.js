@@ -9,14 +9,15 @@ export default function Layout() {
   const [scrollBarAtTop, setScrollBarAtTop] = useState(true);
 
   useEffect(() => {
-    window.onscroll = () => {
+    const checkScrollBarAtTop = () => {
       setTimeout(() => {
         setScrollBarAtTop(Math.ceil(window.scrollY) === 0);
       }, 100);
     };
-
+    window.addEventListener('scroll', checkScrollBarAtTop);
+    
     return () => {
-      window.onscroll = null
+      window.removeEventListener('scroll', checkScrollBarAtTop);
     };
   }, []);
   

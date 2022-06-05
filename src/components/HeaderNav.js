@@ -72,13 +72,18 @@ const HeaderNav = ({ shrink }) => {
   // const handleClose = () => setShow(false);
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
-      if (show && navMenuRef.current && !navMenuRef.current.contains(e.target)) {
-        setShow(false);
+      if (show && navMenuRef.current) {
+        if (!navMenuRef.current.contains(e.target) || Math.ceil(window.scrollY) > 0) {
+          setShow(false);
+        }
       }
     }
-    document.body.addEventListener('mousedown', checkIfClickedOutside);
+    
+    window.addEventListener('mousedown', checkIfClickedOutside);
+    window.addEventListener('scroll', checkIfClickedOutside);
     return () => {
-      document.body.removeEventListener('mousedown', checkIfClickedOutside)
+      window.removeEventListener('mousedown', checkIfClickedOutside);
+      window.removeEventListener('scroll', checkIfClickedOutside);
     }
   }, [show])
   return (
@@ -90,7 +95,7 @@ const HeaderNav = ({ shrink }) => {
         <NavMenu ref={navMenuRef}>
           <div className="flex flex-col leading-3">
             <NavControls className="self-end" menuOpen={show} shrink={shrink} setShow={setShow} />
-            <div className="flex flex-col leading-8">
+            <div className="flex flex-col leading-8" onClick={() => setShow(false)}>
               <Link to="/">Home</Link>
               <Link to="about">About</Link>
             </div>            
