@@ -42,6 +42,7 @@ const Intro = tw.div`
 const Avatar = tw.img`
   max-w-[12rem]
   sm:max-w-[16rem]
+  object-cover
 `
 
 export default function Home () {
