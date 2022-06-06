@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-portfolio/static/css/main.36931403.css",
-    "main.js": "/react-portfolio/static/js/main.f149e50d.js",
+    "main.css": "/react-portfolio/static/css/main.cf0c2b50.css",
+    "main.js": "/react-portfolio/static/js/main.85949736.js",
     "static/js/787.86e70ff7.chunk.js": "/react-portfolio/static/js/787.86e70ff7.chunk.js",
     "static/media/triviaAndChill.png": "/react-portfolio/static/media/triviaAndChill.215d4964a020f5b19657.png",
     "static/media/ecard.jpg": "/react-portfolio/static/media/ecard.55218894c843065ce470.jpg",
@@ -9,12 +9,12 @@
     "static/media/placeholder.png": "/react-portfolio/static/media/placeholder.02c45fed6f554e1c67c8.png",
     "static/media/hauntedhouse.png": "/react-portfolio/static/media/hauntedhouse.805eedf1261ddf3e6980.png",
     "index.html": "/react-portfolio/index.html",
-    "main.36931403.css.map": "/react-portfolio/static/css/main.36931403.css.map",
-    "main.f149e50d.js.map": "/react-portfolio/static/js/main.f149e50d.js.map",
+    "main.cf0c2b50.css.map": "/react-portfolio/static/css/main.cf0c2b50.css.map",
+    "main.85949736.js.map": "/react-portfolio/static/js/main.85949736.js.map",
     "787.86e70ff7.chunk.js.map": "/react-portfolio/static/js/787.86e70ff7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.36931403.css",
-    "static/js/main.f149e50d.js"
+    "static/css/main.cf0c2b50.css",
+    "static/js/main.85949736.js"
   ]
 }
