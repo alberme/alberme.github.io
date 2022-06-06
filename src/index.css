@@ -7,6 +7,7 @@
 @layer base {
   body {
     @apply m-0 text-slate-800 dark:text-slate-200;
+    @apply bg-gradient-to-tr from-rose-50 to-orange-50 dark:from-slate-600 dark:to-slate-800 transition-colors;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

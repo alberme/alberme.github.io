@@ -31,8 +31,6 @@ const MenuButton = tw.button`
 `
 
 const NavMenu = tw.div`
-bg-slate-200
-dark:bg-slate-700
   flex
   flex-col
   rounded-md
@@ -46,10 +44,14 @@ dark:bg-slate-700
   mr-0
   ml-auto
   gap-4
+  bg-gradient-to-tr from-rose-100 to-orange-100 dark:from-slate-600 dark:to-slate-700 transition-colors;
+  dark:bg-slate-700
 `
 
 const NavButtonsContainer = tw.div`
   space-x-4
+  text-gray-500
+  dark:text-slate-100
 `
 
 const NavControls = ({ className, menuOpen, shrink, setShow }) => (
@@ -97,7 +99,7 @@ const HeaderNav = ({ shrink }) => {
         <NavMenu ref={navMenuRef}>
           <div className="flex flex-col leading-3">
             <NavControls className="self-end" menuOpen={show} shrink={shrink} setShow={setShow} />
-            <div className="flex flex-col leading-8" onClick={() => setShow(false)}>
+            <div className="flex flex-col leading-8 text-lg" onClick={() => setShow(false)}>
               <Link to="/">Home</Link>
               <Link to="about">About</Link>
             </div>            

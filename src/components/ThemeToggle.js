@@ -9,9 +9,6 @@ const Toggle = tw.button`
   ease-in-out
   rounded-full
   p-2
-  text-gray-500
-  dark:text-slate-100
-
   cursor-pointer
 `
 
