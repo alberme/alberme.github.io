@@ -97,9 +97,9 @@ const HeaderNav = ({ shrink }) => {
       </Link>
       {show ? (
         <NavMenu ref={navMenuRef}>
-          <div className="flex flex-col leading-3">
+          <div className="flex flex-col leading-3 space-y-3">
             <NavControls className="self-end" menuOpen={show} shrink={shrink} setShow={setShow} />
-            <div className="flex flex-col leading-8 text-lg" onClick={() => setShow(false)}>
+            <div className="flex flex-col leading-8 text-lg font-semibold space-y-1" onClick={() => setShow(false)}>
               <Link to="/">Home</Link>
               <Link to="about">About</Link>
             </div>            
