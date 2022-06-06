@@ -72,18 +72,20 @@ const HeaderNav = ({ shrink }) => {
   // const handleClose = () => setShow(false);
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
-      if (show && navMenuRef.current) {
-        if (!navMenuRef.current.contains(e.target) || Math.ceil(window.scrollY) > 0) {
-          setShow(false);
-        }
+      if (show && navMenuRef.current && !navMenuRef.current.contains(e.target)) {
+        setShow(false);
       }
     }
-    
+    const checkIfScrolled = (e) => {
+      if (show && navMenuRef.current && Math.ceil(window.scrollY) > 0) {
+        setShow(false);
+      }
+    }
     window.addEventListener('mousedown', checkIfClickedOutside);
-    window.addEventListener('scroll', checkIfClickedOutside);
+    window.addEventListener('scroll', checkIfScrolled);
     return () => {
       window.removeEventListener('mousedown', checkIfClickedOutside);
-      window.removeEventListener('scroll', checkIfClickedOutside);
+      window.removeEventListener('scroll', checkIfScrolled);
     }
   }, [show])
   return (
