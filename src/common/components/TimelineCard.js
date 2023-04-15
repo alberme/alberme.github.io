@@ -12,12 +12,12 @@ const TimelineCardContainer = tw.div`
   dark:bg-slate-700
   p-2
   m-2
-`
+`;
 
 export default function TimelineCard({ event }) {
   return (
     <TimelineCardContainer>
-      <div className="min-w-[16rem] max-w-[16rem] p-3 self-start">
+      <div className='min-w-[16rem] max-w-[16rem] p-3 self-start'>
         <strong className='tracking-wider'>{event.title}</strong>
         <br />
         <p>📍&nbsp;{event.location}</p>
@@ -27,5 +27,5 @@ export default function TimelineCard({ event }) {
         <p>{event.description}</p>
       </div>
     </TimelineCardContainer>
-  )
+  );
 }

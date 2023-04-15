@@ -1,6 +1,6 @@
 import tw from 'tailwind-styled-components';
-import placeholder from '../assets/placeholder.png';
 import { FaGithub } from 'react-icons/fa';
+import placeholder from 'assets/placeholder.png';
 
 const Card = tw.div`
   flex
@@ -21,7 +21,7 @@ const Card = tw.div`
   hover:translate-y-1
   hover:scale-110
   dark:bg-slate-700
-`
+`;
 const Pill = tw.div`
   w-4
   h-2
@@ -29,51 +29,58 @@ const Pill = tw.div`
   py-2
   rounded-full
   bg-red-300
-`
+`;
 
 const CardImage = tw.img`
   w-full
   h-[200px]
   md:h-[220px]
-`
+`;
 
 const CardContentContainer = tw.div`
   px-4
   py-2
   my-1
-`
+`;
 
-const getPillColor = (type) => {
-  switch(type) {
+const getPillColor = type => {
+  switch (type) {
     case 'next.js':
-      return '#333333'
+      return '#333333';
     case 'node':
-      return '#539e43'
+      return '#539e43';
     case 'react':
-      return '#61dafb'
+      return '#61dafb';
     case 'video':
-      return 'var(--color-orange)'
+      return 'var(--color-orange)';
     default:
-      return 'var(--color-red)'
+      return 'var(--color-red)';
   }
-}
+};
 
-export default function ProjectCard ({ title, description, link, img }) {
+export default function ProjectCard({ title, description, link, img }) {
   return (
     <Card>
       <div>
         <CardImage
-          className="w-full"
+          className='w-full'
           alt={`${title} preview`}
           src={img || placeholder}
         />
         <CardContentContainer>
-          <h4 className="font-bold text-xl mb-2">{title}</h4>
-          <p className="text-base">{description}</p>
+          <h4 className='font-bold text-xl mb-2'>{title}</h4>
+          <p className='text-base'>{description}</p>
         </CardContentContainer>
       </div>
       <CardContentContainer>
-        <a className="dark:text-sky-200" target="_blank" rel="noreferrer" href={link}>Visit this project</a>
+        <a
+          className='dark:text-sky-200'
+          target='_blank'
+          rel='noreferrer'
+          href={link}
+        >
+          Visit this project
+        </a>
       </CardContentContainer>
     </Card>
   );

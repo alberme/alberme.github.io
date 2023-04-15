@@ -16,21 +16,21 @@ const Main = tw.main`
   lg:max-w-[90vw]
   m-auto
   pb-16
-`
+`;
 
 const Section = tw.section`
   w-full
   my-4
   py-2
-`
+`;
 
 const Container = tw.div`
   flex
   flex-wrap
-  ${(p) => (p.$row ? "flex-row" : "flex-col")}
-  ${(p) => (p.$center && 'justify-center items-center')}
+  ${p => (p.$row ? 'flex-row' : 'flex-col')}
+  ${p => p.$center && 'justify-center items-center'}
   p-2
   w-full
-`
+`;
 
 export { Main, Section, Container };

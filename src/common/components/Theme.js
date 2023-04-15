@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, useEffect, createContext } from 'react';
 
 const initTheme = () => {
   const persistentTheme = window.localStorage.getItem('theme');
@@ -21,7 +21,7 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     const root = window.document.documentElement;
     const inactiveTheme = activeTheme === 'light' ? 'dark' : 'light';
-    
+
     root.classList.remove(inactiveTheme);
     root.classList.add(activeTheme);
 

@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from './HeaderNav'; // rename to Navbar
-import Footer from './Footer';
-import { Main } from './Stack';
-import { ThemeProvider } from './ThemeProvider';
+import { HeaderNav as Header, Footer, Theme } from 'common/components'; // rename to Navbar
+import { Main } from 'common/styles/page';
 
 export default function Layout() {
   const [scrollBarAtTop, setScrollBarAtTop] = useState(true);
@@ -15,19 +13,19 @@ export default function Layout() {
       }, 100);
     };
     window.addEventListener('scroll', checkScrollBarAtTop);
-    
+
     return () => {
       window.removeEventListener('scroll', checkScrollBarAtTop);
     };
   }, []);
-  
+
   return (
-    <ThemeProvider>
-      <Header shrink={!scrollBarAtTop}/>
+    <Theme.ThemeProvider>
+      <Header shrink={!scrollBarAtTop} />
       <Main>
         <Outlet />
       </Main>
       <Footer />
-    </ThemeProvider>
+    </Theme.ThemeProvider>
   );
 }

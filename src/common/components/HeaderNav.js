@@ -1,8 +1,9 @@
 import tw from 'tailwind-styled-components';
-import { FaEllipsisV, FaTimes } from 'react-icons/fa';
 import { useState, useEffect, useRef } from 'react';
-import { Link } from "react-router-dom"
-import ThemeToggle from './ThemeToggle';
+import { Link } from 'react-router-dom';
+import { FaEllipsisV, FaTimes } from 'react-icons/fa';
+
+import ThemeToggle from 'common/components/ThemeToggle';
 
 const Nav = tw.nav`
   flex
@@ -16,19 +17,19 @@ const Nav = tw.nav`
   transition-all
   border-slate-300
   dark:border-slate-600
-  ${p => p.$shrink ? "max-h-14" : "max-h-20"}
-  ${p => p.$shrink ? 'border-b-[1px]' : 'border-b-0'}
+  ${p => (p.$shrink ? 'max-h-14' : 'max-h-20')}
+  ${p => (p.$shrink ? 'border-b-[1px]' : 'border-b-0')}
   px-10
   backdrop-blur-md
   backdrop-saturate-150
-`
+`;
 
 const MenuButton = tw.button`
-  ${p => p.$shrink ? "text-lg" : "text-2xl"}
+  ${p => (p.$shrink ? 'text-lg' : 'text-2xl')}
   bg-transparent
   cursor-pointer
 
-`
+`;
 
 const NavMenu = tw.div`
   flex
@@ -46,26 +47,22 @@ const NavMenu = tw.div`
   gap-4
   bg-gradient-to-tr from-rose-100 to-orange-100 dark:from-slate-600 dark:to-slate-700 transition-colors;
   dark:bg-slate-700
-`
+`;
 
 const NavButtonsContainer = tw.div`
   space-x-4
   text-gray-500
   dark:text-slate-100
-`
+`;
 
 const NavControls = ({ className, menuOpen, shrink, setShow }) => (
   <NavButtonsContainer className={className}>
     <ThemeToggle shrink={shrink} />
-    <MenuButton
-      $shrink={shrink}
-      onClick={() => setShow(prevShow => !prevShow)}
-    >
+    <MenuButton $shrink={shrink} onClick={() => setShow(prevShow => !prevShow)}>
       {menuOpen ? <FaTimes /> : <FaEllipsisV />}
-      
     </MenuButton>
   </NavButtonsContainer>
-)
+);
 
 const HeaderNav = ({ shrink }) => {
   const [show, setShow] = useState(false);
@@ -73,42 +70,60 @@ const HeaderNav = ({ shrink }) => {
   // const handleOpen = () => setShow(true);
   // const handleClose = () => setShow(false);
   useEffect(() => {
-    const checkIfClickedOutside = (e) => {
-      if (show && navMenuRef.current && !navMenuRef.current.contains(e.target)) {
+    const checkIfClickedOutside = e => {
+      if (
+        show &&
+        navMenuRef.current &&
+        !navMenuRef.current.contains(e.target)
+      ) {
         setShow(false);
       }
-    }
-    const checkIfScrolled = (e) => {
+    };
+    const checkIfScrolled = e => {
       if (show && navMenuRef.current && Math.ceil(window.scrollY) > 0) {
         setShow(false);
       }
-    }
+    };
     window.addEventListener('mousedown', checkIfClickedOutside);
     window.addEventListener('scroll', checkIfScrolled);
     return () => {
       window.removeEventListener('mousedown', checkIfClickedOutside);
       window.removeEventListener('scroll', checkIfScrolled);
-    }
-  }, [show])
+    };
+  }, [show]);
   return (
     <Nav $shrink={shrink}>
-      <Link to="/">
-        <h2 className={(shrink ? 'text-xl transition-all' : 'transition-all') + ' m-0'}>Albert M</h2>
+      <Link to='/'>
+        <h2
+          className={
+            (shrink ? 'text-xl transition-all' : 'transition-all') + ' m-0'
+          }
+        >
+          Albert M
+        </h2>
       </Link>
       {show ? (
         <NavMenu ref={navMenuRef}>
-          <div className="flex flex-col leading-3 space-y-3">
-            <NavControls className="self-end" menuOpen={show} shrink={shrink} setShow={setShow} />
-            <div className="flex flex-col leading-8 text-lg font-semibold space-y-1" onClick={() => setShow(false)}>
-              <Link to="/">Home</Link>
-              <Link to="about">About</Link>
-            </div>            
+          <div className='flex flex-col leading-3 space-y-3'>
+            <NavControls
+              className='self-end'
+              menuOpen={show}
+              shrink={shrink}
+              setShow={setShow}
+            />
+            <div
+              className='flex flex-col leading-8 text-lg font-semibold space-y-1'
+              onClick={() => setShow(false)}
+            >
+              <Link to='/'>Home</Link>
+              <Link to='about'>About</Link>
+            </div>
           </div>
         </NavMenu>
       ) : (
         <NavControls menuOpen={show} shrink={shrink} setShow={setShow} />
       )}
-    </Nav> 
+    </Nav>
     // <RBNavbar bg="light" expand={false} sticky='top' style={{background: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,135,70,1) 0%, rgba(130,234,255,1) 100%)"}}>
     //   <Container fluid>
 
@@ -135,7 +150,7 @@ const HeaderNav = ({ shrink }) => {
     //     </RBNavbar.Offcanvas>
     //   </Container>
     // </RBNavbar>
-  )
-}
- 
+  );
+};
+
 export default HeaderNav;
